@@ -1,0 +1,12 @@
+.env
+.env.*
+*.session*
+*.sqlite*
+*.db*
+__pycache__/
+node_modules/
+.next/
+*.tsbuildinfo
+.DS_Store
+
+.venv/
