@@ -6,7 +6,7 @@ A reader can open a breaking headline and follow it back to the exact dispatch i
 
 ## Read one dispatch from end to end
 
-With Git access to this private repository and Docker Compose installed, run:
+With Git and Docker Compose installed, run:
 
 ```sh
 git clone https://github.com/Dror-Bengal/telegram-newsroom.git
@@ -60,3 +60,7 @@ This checks that the bulletin is absent, replays it twice, expects the count to 
 Set `TELEGRAM_API_ID`, `TELEGRAM_API_HASH`, `TELEGRAM_SESSION` (an authorized Telethon string session) and `TELEGRAM_CHANNELS` (a comma-separated list of public channel usernames) in your local shell or an ignored `.env` file. Start the worker with `docker compose --profile live up -d --build --wait`. The collector initially reads the latest 50 messages per channel, then polls after its saved cursor. It handles text and captioned photos. The default editor publishes the dispatch as supplied. To start a connected edition without the sample stories, set `SEED_EDITION=0` before the first launch with a new volume.
 
 To enable the optional batch editor, also set `EDITOR_MODE=gemini`, `GEMINI_MODEL` and `GEMINI_API_KEY`. This sends the selected source text and recent headlines to the configured model. A failed or incomplete model response leaves the batch pending for retry. The default demo and automated tests run locally with both external services disconnected.
+
+## License
+
+Nayto’s code is distributed under the [MIT License](LICENSE). Third-party software and media retain their respective terms.
